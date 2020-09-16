@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import {
-  ScrollView,
+  ScrollView, //ADDED SCROLVIEW ON LOGIN AND SIGN UP SCREEN AS IT DID NOT SCROLLED 
   Text,
   View,
   StyleSheet,
