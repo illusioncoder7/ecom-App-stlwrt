@@ -1,7 +1,7 @@
-/* eslint-disable prettier/prettier */
+//ADDED SCROLVIEW ON LOGIN AND SIGN UP SCREEN AS IT DID NOT SCROLLED {/* Sujan implemented composition of reuseable components */}
 import React, { Component } from 'react';
 import {
-  ScrollView, //ADDED SCROLVIEW ON LOGIN AND SIGN UP SCREEN AS IT DID NOT SCROLLED 
+  ScrollView, 
   Text,
   View,
   StyleSheet,
@@ -17,7 +17,7 @@ export default class SignupScreen extends Component {
     return (
       <ScrollView> 
       <View style={styles.cantainer}>
-      <Logo/> {/* Sujan implemented composition of reuseable components */}
+      <Logo/> 
         
         <View style={styles.subView}>
           <Text style={styles.subTxt}>Signup</Text>
