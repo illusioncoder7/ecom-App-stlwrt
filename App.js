@@ -10,6 +10,8 @@ import CounterScreen from './src/screens/CounterScreen';
 import ImageScreen from './src/screens/ImageScreen';
 import ListScreen from './src/screens/ListScreen'; 
 import PostScreen from './src/screens/PostScreen'; 
+import LoginScreen from './src/screens/LoginScreen';
+import SignupScreen from './src/screens/SignupScreen';
 
 
 
@@ -51,6 +53,8 @@ function App() {
         <Stack.Screen name="Counter" component={CounterScreen} />
         <Stack.Screen name="Components" component={ComponentScreen} />
         <Stack.Screen name="PostScreen" component={PostScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="signup" component={SignupScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>

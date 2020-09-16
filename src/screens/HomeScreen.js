@@ -36,6 +36,12 @@ const HomeScreen = ( { navigation }) => { //deconstruction prpps
         onPress={() => navigation.navigate('PostScreen')}
        // onPress={() => props.navigation.navigate('List')}
       />
+      <Text style={{padding:5}}> To Login screen Test </Text>
+      <Button 
+        title="Go to Login Screen"
+        onPress={() => navigation.navigate('Login')}
+       // onPress={() => props.navigation.navigate('List')}
+      />
 
       {/* <TouchableOpacity
         onPress={() => props.navigation.navigate('List')}
