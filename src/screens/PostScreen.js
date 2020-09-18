@@ -1,21 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Image, FlatList, Text, View, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { ActivityIndicator, FlatList, Text, View , Image, StyleSheet} from 'react-native';
 
-class PostScreen extends React.Component{
-
+export default class PostScreen extends Component {
   constructor(props) {
     super(props);
-    this.state ={
-      isLoading : true,
-      shop_data: [],
-    }
+
+    this.state = {
+      data: [],
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://www.json-generator.com/api/json/get/ccLAsEcOSq?indent=1')
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({ data: json.book_array });
+      })
+      .catch((error) => console.error(error))
+      .finally(() => {
+        this.setState({ isLoading: false });
+      });
   }
 
   renderItem=({ item })=> {
     return(
       <View style={{flex:1, flexDirection:'row', marginBottom:3}}>
         <Image style={{width:100, height:100, margin:5}}
-          source={{urr: item.image}}
+          source={{uri: item.image}}
           />
         <View style={{flex:1,  justifyContent:'center', marginLeft:5}}>
           <Text style={{fontSize:18, color: 'green', marginBottom:15}}>
@@ -38,61 +50,25 @@ class PostScreen extends React.Component{
     )
   }
 
-  componentDidMount(){
-    const url='http://www.json-generator.com/api/json/get/ccLAsEcOSq?indent=1'
-    return(
-      fetch('url')
-        .then(response => response.json())
-        .then(responseData =>{
-          this.setState({
-            isLoading:false,
-            shop_data: responseData.book_array,
-          });
-        })
-        .catch( (error) =>{
-            console.log(error)
-        })
-    )
+  render() {
+    const { data, isLoading } = this.state;
 
-  }
-
-  render(){
-    return(
-      this.state.isLoading ? 
-      <View style={{flex:1, justifyContent:'center',alignItems:'center'}}>
-        <ActivityIndicator size='large' color='#330066' animating />
+    return (
+      <View style={{ flex: 1, padding: 24 }}>
+        {isLoading ? <ActivityIndicator/> : (
+          <FlatList
+            data={data}
+            keyExtractor={({ book_title }, index) => book_title}
+            renderItem={ this.renderItem}
+            ItemSeparatorComponent={this.renderSeparator}
+          />
+        )}
       </View>
-      :
-      <View style={styles.container}>
-      <FlatList
-        data={this.state.shop_data}
-        renderItem={this.renderItem}
-        keyExtractor={(item, index) => index}
-        ItemSeparatorComponent={this.renderSeparator}
-      />
-    </View>
-    )
-    
-     
+    );
   }
-}
-const styles= StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor:'#fff',
-    alignItems:'center',
-    justifyContent: "center",
-  },
-  item:{
-    flex:1,
-    alignSelf: "stretch",
-    margin: 10,
-    alignItems: "center",
-    justifyContent: 'center',
-    borderBottomColor:'#eee',
-    borderRightWidth:1,
-    
-  }
-})
+};
 
-export default PostScreen;
+
+
+
+
