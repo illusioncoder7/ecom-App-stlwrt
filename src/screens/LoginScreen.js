@@ -21,7 +21,7 @@ export default class LoginScreen extends Component {
         <View style={styles.subView}>
           <Text style={styles.subTxt}>Login</Text>
           <TextInput style={styles.nameInput} placeholder="Email" onChangeText={(email => { this.setState({ email }) })} />
-          <TextInput style={styles.nameInput} placeholder="Password" onChangeText={(pass => { this.setState({ pass }) })} />
+          <TextInput style={styles.nameInput} placeholder="Password" secureTextEntry={true} onChangeText={(pass => { this.setState({ pass }) })} />
           <Text style={styles.forgotTxt}>Forgot Password?</Text>
           <TouchableOpacity style={styles.btn} onPress={this.logIn}>
             <Text style={styles.btnTxt}>Login</Text>
@@ -43,11 +43,11 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#1c313a',
-    height: 1000,
+    height: 751,
   },
   subView: {
     backgroundColor: '#e0ffff',
-    height: 1000,
+    height: 500,
     marginTop: 40,
     borderTopRightRadius: 40,
     borderTopLeftRadius: 40,
