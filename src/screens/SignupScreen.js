@@ -23,7 +23,8 @@ export default class SignupScreen extends Component {
           <Text style={styles.subTxt}>Signup</Text>
           <TextInput style={styles.nameInput} placeholder="Username" />
           <TextInput style={styles.nameInput} placeholder="Email" onChangeText={(email => { this.setState({ email }) })} />
-          <TextInput style={styles.nameInput} placeholder="Password" onChangeText={(pass => { this.setState({ pass }) })} />
+          <TextInput style={styles.nameInput} placeholder="Phone Number" onChangeText={(Phone => { this.setState({ Phone }) })} />
+          <TextInput style={styles.nameInput} placeholder="Password" secureTextEntry={true} onChangeText={(pass => { this.setState({ pass }) })} />
           <TouchableOpacity style={styles.btn} onPress={this.signUp}>
             <Text style={styles.btnTxt}>SignUp</Text>
           </TouchableOpacity>
@@ -45,13 +46,13 @@ export default class SignupScreen extends Component {
 const styles = StyleSheet.create({
   cantainer: {
     backgroundColor: '#1c313a',
-    height: 1000,
+    height: 800,
 
   },
   subView: {
     backgroundColor: '#e0ffff',
-    height: 1000,
-    marginTop: 30,
+    height: 651,
+    marginTop: 10,
     borderTopRightRadius: 40,
     borderTopLeftRadius: 40,
   },
@@ -99,14 +100,14 @@ const styles = StyleSheet.create({
   },
 endTxt: {
     fontSize: 15,
-    marginTop: 70,
+    marginTop: 45,
     marginLeft: 60,
     fontWeight: 'bold',
   },
   loginTxt: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 65,
+    marginTop: 40,
   },
   
   endBtn: {
