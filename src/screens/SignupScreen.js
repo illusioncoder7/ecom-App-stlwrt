@@ -108,6 +108,7 @@ endTxt: {
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 40,
+    color:'blue'
   },
   
   endBtn: {
