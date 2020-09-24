@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
     flexGrow:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    marginTop: 60,
+    marginTop: 30,
 },
 
 	logoText : {
 		marginVertical:15,
-		fontSize:18,
+		fontSize:22,
 		color:'rgba(255, 255, 255, 0.7)'
 	}
 

@@ -45,7 +45,7 @@ export default class SignupScreen extends Component {
 
 const styles = StyleSheet.create({
   cantainer: {
-    backgroundColor: '#1c313a',
+    backgroundColor: '#5f8494',
     height: 800,
 
   },

@@ -30,7 +30,7 @@ export default class LoginScreen extends Component {
             <Text style={styles.endTxt}>Create an account?</Text>
             <TouchableOpacity
               style={styles.endBtn}
-              onPress={() => this.props.navigation.navigate('signup')}>
+              onPress={() => this.props.navigation.navigate('Signup')}>
               <Text style={styles.loginTxt}>SignUp</Text>
             </TouchableOpacity>
           </View>
@@ -42,7 +42,7 @@ export default class LoginScreen extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1c313a',
+    backgroundColor: '#5f8494',
     height: 1000,
   },
   subView: {
