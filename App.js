@@ -42,20 +42,8 @@ const HomeStackScreen =()=>(
   
 )
 const DetailStackScreen =()=>(
-  <DetailStack.Navigator screenOptions={{
-    headerStyle:{
-      backgroundColor:'#10386e',
-    },
-    headerTintColor:'#fff',
-    headerTitleStyle:{
-      fontWeight:'bold'
-    }
-  }}>
-    <DetailStack.Screen 
-    name="Login" 
-    component={LoginScreen} 
-    options={{title:'Stalwart Engineering Solution'}}
-    />
+  <DetailStack.Navigator>
+     
     
     <DetailStack.Screen name="PostScreen" component={PostScreen} />
      
