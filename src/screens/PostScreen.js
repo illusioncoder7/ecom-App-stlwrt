@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, FlatList, Text, View , Image, StyleSheet} from 'react-native';
+import {TouchableOpacity, ActivityIndicator, FlatList, Text, View , Image, StyleSheet} from 'react-native';
 
 export default class PostScreen extends Component {
   constructor(props) {
@@ -26,18 +26,29 @@ export default class PostScreen extends Component {
   renderItem=({ item })=> {
     return(
       <View style={{flex:1, flexDirection:'row', marginBottom:3}}>
-        <Image style={{width:100, height:100, margin:5}}
-          source={{uri: item.image}}
-          />
-        <View style={{flex:1,  justifyContent:'center', marginLeft:5}}>
-          <Text style={{fontSize:18, color: 'green', marginBottom:15}}>
-          {item.book_title}
-          </Text>  
-          <Text style={{fontSize:16, color:'red'}}>
-            {item.author} 
-          </Text>      
+          <TouchableOpacity 
+            title={item.book_title}
+            book_author={item.author}  
+            imgSrc={item.image}
+            onPress={()=> this.props.navigation.navigate('detailsScreen')}
+            >
+            <Image style={{width:100, height:100, margin:5}}
+              source={{uri: item.image}}
+              />
+            <View style={{flex:1,  justifyContent:'center', marginLeft:5}}>
+              <Text style={{fontSize:18, color: 'green', marginBottom:15}}>
+              {item.book_title}
+              </Text>  
+              <Text style={{fontSize:16, color:'red'}}>
+                {item.author} 
+              </Text>   
+              {/* <TouchableOpacity onPress={()=> this.props.navigation.navigate('detailsScreen')}>
+                <Text>Click me</Text>
+              </TouchableOpacity> */}
+
+            </View>
+          </TouchableOpacity>
         </View>
-      </View>
     )
 
   }

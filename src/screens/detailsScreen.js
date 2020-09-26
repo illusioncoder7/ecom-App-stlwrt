@@ -13,7 +13,9 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import LinearGradient from "react-native-linear-gradient";
 
 export default class Detail extends React.Component{
+  
   render(){
+    console.log(this.props.title);
     return(
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -24,15 +26,22 @@ export default class Detail extends React.Component{
         >
           <View style={styles.image_container}>
               <Image 
-                source={require("../../assests/book.jpg")}
+                source={{uri:this.props.imgSrc}}
                 style={styles.image}
               />
           </View>
           
         </ImageBackground>
         <ScrollView style={styles.footer}>
+            <View style={{alignItems:'center', marginLeft:20}}>
+                <Text style={{color:'black', fontSize:30}}>{this.props.title}</Text>
+            </View>
+            <View style={{alignItems:'center', marginLeft:20}}>
+                <Text style={{color:'black', fontSize:20}}>{this.props.book_author}</Text>
+            </View>
+
             <View style={styles.status}>
-                <Text style={{color:'green'}}>AVALIABLE</Text>
+            <Text style={{color:'green'}}>AVALIABLE{this.props.title}</Text>
             </View>
             <Text  style={styles.textDetail}>+12</Text>
             
