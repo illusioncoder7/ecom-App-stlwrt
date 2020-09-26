@@ -15,7 +15,7 @@ import LinearGradient from "react-native-linear-gradient";
 export default class Detail extends React.Component{
   
   render(){
-    console.log(this.props.title);
+    console.log(this.props);
     return(
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
