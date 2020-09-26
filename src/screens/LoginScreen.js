@@ -14,6 +14,7 @@ import Logo from '../components/Logo';
 export default class LoginScreen extends Component {
 
   render() {
+     
     return (
       <ScrollView>
       <View style={styles.container}>
@@ -34,6 +35,7 @@ export default class LoginScreen extends Component {
               <Text style={styles.loginTxt}>SignUp</Text>
             </TouchableOpacity>
           </View>
+
           <View style={styles.endView}>
             <Text style={styles.endTxt}>Go to details page</Text>
             <TouchableOpacity
@@ -42,6 +44,12 @@ export default class LoginScreen extends Component {
               <Text style={styles.loginTxt}>Product Details</Text>
             </TouchableOpacity>
           </View>
+          <TouchableOpacity
+              style={{ marginLeft:10, paddingTop:40}}
+              onPress={()=> this.props.navigation.navigate('PostScreen')}>
+            
+              
+            </TouchableOpacity>
         </View>
       </View>
       </ScrollView>

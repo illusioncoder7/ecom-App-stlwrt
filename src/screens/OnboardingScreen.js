@@ -25,7 +25,7 @@ const OnboardingScreen = ({navigation}) => {
     backgroundColor: '#e9bcbe',
       image: <Image source={require('../../assests/onboarding-img3.png')} />,
       title: 'Connect to knowledge',
-      subtitle: 'This is the new way to connect',
+      subtitle: 'This is the new way to connect with the knowledge through books',
     },
   ]}
 />

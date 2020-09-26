@@ -12,9 +12,6 @@ import LoginScreen from './src/screens/LoginScreen';
 import SignupScreen from './src/screens/SignupScreen';
 import detailsScreen from './src/screens/detailsScreen';
 
-
-
- 
  
 const HomeStack = createStackNavigator();
 const DetailStack = createStackNavigator();
@@ -47,20 +44,8 @@ const HomeStackScreen =()=>(
   
 )
 const DetailStackScreen =()=>(
-  <DetailStack.Navigator screenOptions={{
-    headerStyle:{
-      backgroundColor:'#10386e',
-    },
-    headerTintColor:'#fff',
-    headerTitleStyle:{
-      fontWeight:'bold'
-    }
-  }}>
-    <DetailStack.Screen 
-    name="Login" 
-    component={LoginScreen} 
-    options={{title:'Stalwart Engineering Solution'}}
-    />
+  <DetailStack.Navigator>
+     
     
     <DetailStack.Screen name="PostScreen" component={PostScreen} />
     <DetailStack.Screen name="Onboarding" component={OnboardingScreen} />

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   cantainer: {
     backgroundColor: '#5f8494',
     height: 800,
-
+    
   },
   subView: {
     backgroundColor: '#e0ffff',
