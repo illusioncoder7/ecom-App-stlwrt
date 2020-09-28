@@ -25,14 +25,17 @@ export default class PostScreen extends Component {
 
   renderItem=({ item })=> {
     return(
-      <View style={{flex:1, flexDirection:'row', marginBottom:3}}>
+      <View style={{flex:1, flexDirection:'row', marginBottom:10}}>
           <TouchableOpacity 
-            title={item.book_title}
-            book_author={item.author}  
-            imgSrc={item.image}
-            onPress={()=> this.props.navigation.navigate('detailsScreen')}
+            
+            onPress={()=> {
+              this.props.navigation.navigate('detailsScreen')
+              title=item.book_title
+              book_author=item.author
+              imgSrc=item.image
+              }}
             >
-            <Image style={{width:100, height:100, margin:5}}
+            <Image style={{width:200, height:300, margin:5}}
               source={{uri: item.image}}
               />
             <View style={{flex:1,  justifyContent:'center', marginLeft:5}}>
@@ -65,7 +68,7 @@ export default class PostScreen extends Component {
     const { data, isLoading } = this.state;
 
     return (
-      <View style={{ flex: 1, padding: 24 }}>
+      <View style={{ flex: 1 ,alignItems:'center' }}>
         {isLoading ? <ActivityIndicator/> : (
           <FlatList
             data={data}
