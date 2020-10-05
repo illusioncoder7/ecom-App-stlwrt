@@ -7,10 +7,45 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Alert
 } from 'react-native';
+
+import auth from '@react-native-firebase/auth';
+import firebase from '@react-native-firebase/app';
+
+
 
 import Logo from '../components/Logo';
 export default class SignupScreen extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      pass: ''
+    }
+  }
+  signUp = () => {
+    const { email, pass } = this.state
+    try {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, pass)
+        .then(user => {
+           Alert.alert('Registered Sucessfully')
+          this.props.navigation.navigate('detailsScreen')
+
+        
+        
+       }
+
+        );
+    }
+    catch (error) {
+      console.log('err');
+
+    }
+  }
 
   
   render() {
