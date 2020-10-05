@@ -31,7 +31,7 @@ export default class LoginScreen extends Component {
         .auth()
         .signInWithEmailAndPassword(email, pass)
         .then(user => {
-          this.props.navigation.navigate('detailsScreen');
+          this.props.navigation.navigate('PostScreen');
          
         })
     }

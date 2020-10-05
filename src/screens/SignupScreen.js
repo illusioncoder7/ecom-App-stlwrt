@@ -33,7 +33,7 @@ export default class SignupScreen extends Component {
         .createUserWithEmailAndPassword(email, pass)
         .then(user => {
            Alert.alert('Registered Sucessfully')
-          this.props.navigation.navigate('detailsScreen')
+          this.props.navigation.navigate('PostScreen')
 
         
         
