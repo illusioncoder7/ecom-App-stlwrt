@@ -6,7 +6,7 @@ This repo is for construction a ecommerce app by stalwart Intern App Dev Team. T
 - Product Detail screen
 
 
-Before running this project please intsall following codes in your project
+please run following codes before runnin the project
 - npm install --save @react-native-firebase/app
 - npm install @react-native-firebase/auth
 - npm install
