@@ -10,8 +10,36 @@ import {
   Alert
 } from 'react-native';
 import Logo from '../components/Logo';
+import firebase from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+
+
 
 export default class LoginScreen extends Component {
+
+   constructor() {
+    super();
+    this.state = {
+      email: '',
+      pass: '',
+    }
+  }
+  logIn = () => {
+    const { email, pass } = this.state
+    try {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, pass)
+        .then(user => {
+          this.props.navigation.navigate('detailsScreen');
+         
+        })
+    }
+    catch (erroe) {
+      console.log('error');
+
+    }
+  }
 
   render() {
      
