@@ -8,7 +8,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import PostScreen from './src/screens/PostScreen'; 
-import LoginScreen from './src/screens/LoginScreen';
+import LoginScreen from './src/screens/loginScreen';
 import SignupScreen from './src/screens/SignupScreen';
 import detailsScreen from './src/screens/detailsScreen';
 
