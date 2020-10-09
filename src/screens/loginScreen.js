@@ -64,20 +64,6 @@ export default class LoginScreen extends Component {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.endView}>
-            <Text style={styles.endTxt}>Go to details page</Text>
-            <TouchableOpacity
-              style={styles.endBtn}
-              onPress={() => this.props.navigation.navigate('detailsScreen')}>
-              <Text style={styles.loginTxt}>Product Details</Text>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity
-              style={{ marginLeft:10, paddingTop:40}}
-              onPress={()=> this.props.navigation.navigate('PostScreen')}>
-            
-              
-            </TouchableOpacity>
         </View>
       </View>
       </ScrollView>
