@@ -7,7 +7,8 @@ import {
   Dimensions,
   Image,
   StatusBar,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import LinearGradient from "react-native-linear-gradient";
@@ -15,7 +16,14 @@ import LinearGradient from "react-native-linear-gradient";
 export default class Detail extends React.Component{
   
   render(){
-    console.log(this.props);
+    // console.log(this.props);
+    const { navigation } = this.props;
+    let data = this.props.route.params;
+    console.log(data);
+    // const d = Object.entries(otherParam);
+    // console.log(d);
+    // const data=JSON.stringify(otherParam);
+
     return(
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -26,22 +34,25 @@ export default class Detail extends React.Component{
         >
           <View style={styles.image_container}>
               <Image 
-                source={{uri:this.props.imgSrc}}
+                source={{uri:data.imgSrc}}
                 style={styles.image}
               />
           </View>
+        {/* <Text>Details Screen</Text> //TEST CODES
+        <Text>Author: {data.book_author}  </Text>
+        <Text>otherParam: </Text> */}
           
         </ImageBackground>
         <ScrollView style={styles.footer}>
             <View style={{alignItems:'center', marginLeft:20}}>
-                <Text style={{color:'black', fontSize:30}}>{this.props.title}</Text>
+                <Text style={{color:'black', fontSize:30}}>{data.title}</Text>
             </View>
             <View style={{alignItems:'center', marginLeft:20}}>
-                <Text style={{color:'black', fontSize:20}}>{this.props.book_author}</Text>
+                <Text style={{color:'black', fontSize:20}}>{data.book_author}</Text>
             </View>
 
             <View style={styles.status}>
-            <Text style={{color:'green'}}>AVALIABLE{this.props.title}</Text>
+            <Text style={{color:'green'}}>AVALIABLE</Text>
             </View>
             <Text  style={styles.textDetail}>+12</Text>
             
@@ -51,8 +62,14 @@ export default class Detail extends React.Component{
             end={{x: 1, y: 0}} 
             colors={['#009245', '#8cc631']}
             style={styles.button}
+            
             >
-              <Text style={styles.textOrder}>Add to cart</Text>
+              <TouchableOpacity
+                // onPress={this.props.navigation.navigate('Cart') }
+              >
+                <Text style={styles.textOrder}>Add to Cart</Text>
+
+              </TouchableOpacity>
               
             </LinearGradient>
 

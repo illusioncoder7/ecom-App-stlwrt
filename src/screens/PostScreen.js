@@ -24,15 +24,15 @@ export default class PostScreen extends Component {
   }
 
   renderItem=({ item })=> {
+    let data={name:'mandil',title:item.book_title,book_author:item.author,imgSrc:item.image  };
+
     return(
       <View style={{flex:1, flexDirection:'row', marginBottom:10}}>
           <TouchableOpacity 
             
             onPress={()=> {
-              this.props.navigation.navigate('detailsScreen')
-              title=item.book_title
-              book_author=item.author
-              imgSrc=item.image
+              this.props.navigation.navigate('detailsScreen', data);
+              
               }}
             >
             <Image style={{width:200, height:300, margin:5}}

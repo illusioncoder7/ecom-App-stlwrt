@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const ItemDetail=()=>{
+const Cart=()=>{
     return(
         <View>
-            
+            <Text>This is Cart</Text>
         </View>
     );
 }
-export default ItemDetail;
+export default Cart;
