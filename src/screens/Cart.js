@@ -1,14 +1,14 @@
 import React from 'react';
 import {Text, View,TouchableOpacity, StyleSheet} from 'react-native';
 
-const Cart=(prop)=>{
+const Cart=(props)=>{
     return(
         <View>
             <Text>This is Cart</Text>
             <View>
             <TouchableOpacity
               style={styles.endBtn}
-              onPress={() => this.props.navigation.navigate('Checkout')}>
+              onPress={() => props.navigation.navigate('Checkout')}>
               <Text style={styles.loginTxt}>Checkout </Text>
             </TouchableOpacity>
             </View>
