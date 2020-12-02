@@ -12,6 +12,7 @@ import LoginScreen from './src/screens/loginScreen';
 import SignupScreen from './src/screens/SignupScreen';
 import detailsScreen from './src/screens/DetailsScreen';
 import Cart from './src/screens/Cart';
+import Checkout from './src/screens/CheckoutScreen';
 
  
 const HomeStack = createStackNavigator();
@@ -40,7 +41,7 @@ const HomeStackScreen =()=>(
      
     <HomeStack.Screen name="Signup" component={SignupScreen} />
     <HomeStack.Screen name="Cart" component={Cart} />
-
+    <HomeStack.Screen name="Checkout" component={Checkout}/>
 
 
   </HomeStack.Navigator >
@@ -50,12 +51,14 @@ const DetailStackScreen =()=>(
   <DetailStack.Navigator>
      
     
-    <DetailStack.Screen name="PostScreen" component={PostScreen} />
+    {/* <DetailStack.Screen name="PostScreen" component={PostScreen} /> */}
     <DetailStack.Screen name="Onboarding" component={OnboardingScreen} />
     <DetailStack.Screen name="detailsScreen" component={detailsScreen} />
      
     <DetailStack.Screen name="Signup" component={SignupScreen} />
     <DetailStack.Screen name="Cart" component={Cart} />
+    <DetailStack.Screen name="Checkout" component={Checkout}/>
+
 
 
   </DetailStack.Navigator >
@@ -68,6 +71,7 @@ function App() {
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeStackScreen} />
         <Drawer.Screen name="Detail" component={DetailStackScreen} />
+
       </Drawer.Navigator>
      
     </NavigationContainer>
