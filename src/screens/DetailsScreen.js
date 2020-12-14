@@ -12,6 +12,12 @@ import {
 } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import LinearGradient from "react-native-linear-gradient";
+import { NavigationContainer } from '@react-navigation/native';
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import detailsScreen from './DetailsScreen';
+import Cart from './Cart';
+import Checkout from './CheckoutScreen';
 
 export default class Detail extends React.Component{
   
@@ -23,9 +29,17 @@ export default class Detail extends React.Component{
     // const d = Object.entries(otherParam);
     // console.log(d);
     // const data=JSON.stringify(otherParam);
-
+    const Tab = createBottomTabNavigator();
     return(
       <View style={styles.container}>
+            <NavigationContainer>
+              <Tab.Navigator>
+                <Tab.Screen name="detailsScreen" component={detailsScreen} />
+                <Tab.Screen name="Cart" component={Cart} />
+                <Tab.Screen name="Checkout" component={Checkout} />
+
+              </Tab.Navigator>
+            </NavigationContainer>
         <StatusBar barStyle="light-content" />
         <ImageBackground
           source={require('../../assests/header_detail.png')}
