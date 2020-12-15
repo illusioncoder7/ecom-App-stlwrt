@@ -1,38 +1,33 @@
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image
-} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, {Component} from 'react';
+import {StyleSheet, Text, View, Image} from 'react-native';
 
 export default class Logo extends Component {
-	render() {
-		return(
-			<View style={styles.container}>
-				<Image style={{width:100, height: 100}}
-					source={require('../../assests/Logo.png')}/>
+  render() {
+    return (
+      <View style={styles.container}>
+        <Image
+          style={{width: 100, height: 100}}
+          source={require('../../assests/Logo.png')}
+        />
 
-				<Text style={styles.logoText}>Welcome</Text>
-			</View>		
-			)
-
-
-	}
+        <Text style={styles.logoText}>Welcome</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  container : {
-    flexGrow:1,
-    justifyContent:'flex-end',
-    alignItems:'center',
+  container: {
+    flexGrow: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
     marginTop: 30,
-},
+  },
 
-	logoText : {
-		marginVertical:15,
-		fontSize:22,
-		color:'rgba(255, 255, 255, 0.7)'
-	}
-
+  logoText: {
+    marginVertical: 15,
+    fontSize: 22,
+    color: 'rgba(255, 255, 255, 0.7)',
+  },
 });

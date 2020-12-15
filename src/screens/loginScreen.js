@@ -67,7 +67,7 @@ export default class LoginScreen extends Component {
           <View>
           <TouchableOpacity
               style={styles.endBtn}
-              onPress={() => this.props.navigation.navigate('Cart')}>
+              onPress={() => this.props.navigation.navigate('SplashScreen')}>
               <Text style={styles.loginTxt}>To Cart</Text>
             </TouchableOpacity>
           </View>

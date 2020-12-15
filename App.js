@@ -13,6 +13,7 @@ import SignupScreen from './src/screens/SignupScreen';
 import detailsScreen from './src/screens/DetailsScreen';
 import Cart from './src/screens/Cart';
 import Checkout from './src/screens/CheckoutScreen';
+import SplashScreen from './src/screens/SplashScreen';
 
  
 const HomeStack = createStackNavigator();
@@ -21,14 +22,10 @@ const Drawer = createDrawerNavigator();
 
 const HomeStackScreen =()=>(
   <HomeStack.Navigator screenOptions={{
-    headerStyle:{
-      backgroundColor:'#10386e',
-    },
-    headerTintColor:'#fff',
-    headerTitleStyle:{
-      fontWeight:'bold'
-    }
-  }}>
+    headerShown:false
+  }
+  }>
+    <HomeStack.Screen name="SplashScreen" component={SplashScreen} />
     <HomeStack.Screen name="Onboarding" component={OnboardingScreen} />
     <HomeStack.Screen 
     name="Login" 
