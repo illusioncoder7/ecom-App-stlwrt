@@ -28,9 +28,8 @@ const HomeStackScreen =()=>(
     screenOptions={{
       headerShown:false
     }}
-    initialRouteName="SplashScreen" headerMode='none'
+    initialRouteName="TabContainer" headerMode='none'
   >
-    <HomeStack.Screen name="SplashScreen" component={SplashScreen} />
     {/* <HomeStack.Screen name="Onboarding" component={OnboardingScreen} /> */}
     <HomeStack.Screen 
     name="Login" 
@@ -84,10 +83,11 @@ const TabContainer=()=>{
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator initialRouteName="SplashScreen">
         <Drawer.Screen name="Home" component={HomeStackScreen} />
         <Drawer.Screen name="Profile" component={ProfileScreen} />
         <Drawer.Screen name="Setting" component={DetailStackScreen} />
+        <Drawer.Screen name="SplashScreen" component={SplashScreen} />
 
       </Drawer.Navigator>
      
