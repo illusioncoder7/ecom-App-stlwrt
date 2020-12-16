@@ -50,7 +50,8 @@ const HomeStackScreen =({navigation})=>(
     <HomeStack.Screen 
       name="TabContainer" 
       component={TabContainer } options={{title:'Grocery Store' }} 
-      />
+      /> 
+      
 
 
   </HomeStack.Navigator >
