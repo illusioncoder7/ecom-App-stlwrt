@@ -16,7 +16,7 @@ import DetailsScreen from './src/screens/DetailsScreen';
 import CartScreen from './src/screens/CartScreen';
 import Checkout from './src/screens/CheckoutScreen';
 import SplashScreen from './src/screens/SplashScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
+import AccountScreen from './src/screens/AccountScreen';
 
  
 const HomeStack = createStackNavigator();
@@ -128,7 +128,7 @@ function App() {
         
       >
         <Drawer.Screen name="Home" component={HomeStackScreen}/>
-        <Drawer.Screen name="Profile" component={ProfileScreen} />
+        <Drawer.Screen name="Account" component={AccountScreen} />
         <Drawer.Screen name="Setting" component={DetailStackScreen} />
         <Drawer.Screen name="SplashScreen" component={SplashScreen}  />
 

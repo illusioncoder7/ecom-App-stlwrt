@@ -1,7 +1,7 @@
 import React from "react";
 import {Text, View,} from 'react-native';
 
-const ProfileScreen=() =>{
+const AccountScreen=() =>{
     return(
         <View>
             <Text style={{textAlign:'center'}}>
@@ -10,4 +10,4 @@ const ProfileScreen=() =>{
         </View>
     )
 }
-export default ProfileScreen;
+export default AccountScreen;
