@@ -24,27 +24,33 @@ const DetailStack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
-const HomeStackScreen =()=>(
+const HomeStackScreen =({navigation})=>(
   <HomeStack.Navigator 
     screenOptions={{
-      headerShown:false
+      headerShown:true
     }}
-    initialRouteName="TabContainer" headerMode='none'
+    initialRouteName="TabContainer"  
   >
     {/* <HomeStack.Screen name="Onboarding" component={OnboardingScreen} /> */}
     <HomeStack.Screen 
     name="Login" 
     component={LoginScreen} 
-    options={{title:'Stalwart Engineering Solution'}}
+    options={{
+      title:'Stalwart Engineering Solution'}}
     />
     
     <HomeStack.Screen name="DetailsScreen" component={DetailsScreen} />
-    <HomeStack.Screen name="PostScreen" component={PostScreen} />
+    <HomeStack.Screen name="PostScreen" component={PostScreen} 
+    
+    />
      
     <HomeStack.Screen name="Signup" component={SignupScreen} />
     <HomeStack.Screen name="Cart" component={CartScreen} />
     <HomeStack.Screen name="Checkout" component={Checkout}/>
-    <HomeStack.Screen name="TabContainer" component={TabContainer}/>
+    <HomeStack.Screen 
+      name="TabContainer" 
+      component={TabContainer } options={{title:'Grocery Store' }} 
+      />
 
 
   </HomeStack.Navigator >
@@ -135,7 +141,7 @@ function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="SplashScreen" 
-        
+        drawerPosition='right'
       >
         <Drawer.Screen name="Home" component={HomeStackScreen}/>
         <Drawer.Screen name="Account" component={AccountScreen} />
