@@ -93,7 +93,7 @@ const TabContainer=()=>{
                 />
               );
             }
-            else if (route.name === 'Profile') {
+            else if (route.name === 'Account') {
               return (
                 <Icon
                   name={focused ? 'user-circle' : 'user-circle'}
@@ -116,7 +116,7 @@ const TabContainer=()=>{
           
           />
         <Tab.Screen name="Cart" component={CartScreen} />
-        <Tab.Screen name="Profile" component={SignupScreen} />
+        <Tab.Screen name="Account" component={SignupScreen} />
 
       </Tab.Navigator>
   )
