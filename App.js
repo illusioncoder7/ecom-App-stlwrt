@@ -84,7 +84,7 @@ const TabContainer=()=>{
                   color={color}
                 />
               );
-            } else if (route.name === 'Cart') {
+            } else if (route.name === 'Basket') {
               return (
                 <Icon
                   name={focused ? 'shopping-cart' : 'shopping-cart'}
@@ -115,7 +115,7 @@ const TabContainer=()=>{
           component={PostScreen} 
           
           />
-        <Tab.Screen name="Cart" component={CartScreen} />
+        <Tab.Screen name="Basket" component={CartScreen} />
         <Tab.Screen name="Account" component={SignupScreen} />
 
       </Tab.Navigator>
