@@ -87,7 +87,16 @@ const TabContainer=()=>{
             } else if (route.name === 'Basket') {
               return (
                 <Icon
-                  name={focused ? 'shopping-cart' : 'shopping-cart'}
+                  name={focused ? 'shopping-basket' : 'shopping-basket'}
+                  size={size}
+                  color={color}
+                />
+              );
+            }
+            else if (route.name === 'Categories') {
+              return (
+                <Icon
+                  name={focused ? 'list' : 'list'}
                   size={size}
                   color={color}
                 />
@@ -96,7 +105,7 @@ const TabContainer=()=>{
             else if (route.name === 'Account') {
               return (
                 <Icon
-                  name={focused ? 'user-circle' : 'user-circle'}
+                  name={focused ? 'user' : 'user'}
                   size={size}
                   color={color}
                 />
@@ -104,7 +113,6 @@ const TabContainer=()=>{
             }
           },
         })}
-
         tabBarOptions={{
           activeTintColor: 'blue',
           inactiveTintColor: 'gray',
@@ -115,6 +123,8 @@ const TabContainer=()=>{
           component={PostScreen} 
           
           />
+
+        <Tab.Screen name="Categories" component={CartScreen} />  
         <Tab.Screen name="Basket" component={CartScreen} />
         <Tab.Screen name="Account" component={SignupScreen} />
 
