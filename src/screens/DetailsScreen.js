@@ -16,7 +16,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import detailsScreen from './DetailsScreen';
-import Cart from './Cart';
+import Cart from './CartScreen';
 import Checkout from './CheckoutScreen';
 
 export default class Detail extends React.Component {
@@ -31,13 +31,6 @@ export default class Detail extends React.Component {
     const Tab = createBottomTabNavigator();
     return (
       <View style={styles.container}>
-        <NavigationContainer>
-          <Tab.Navigator>
-            <Tab.Screen name="detailsScreen" component={detailsScreen} />
-            <Tab.Screen name="Cart" component={Cart} />
-            <Tab.Screen name="Checkout" component={Checkout} />
-          </Tab.Navigator>
-        </NavigationContainer>
         <StatusBar barStyle="light-content" />
         <ImageBackground
           source={require('../../assests/header_detail.png')}

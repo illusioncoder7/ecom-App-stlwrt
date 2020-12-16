@@ -31,7 +31,7 @@ export default class PostScreen extends Component {
           <TouchableOpacity 
             
             onPress={()=> {
-              this.props.navigation.navigate('detailsScreen', data);
+              this.props.navigation.navigate('DetailsScreen', data);
               
               }}
             >

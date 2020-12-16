@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View,TouchableOpacity, StyleSheet} from 'react-native';
 
-const Cart=(props)=>{
+const CartScreen=(props)=>{
     return(
         <View>
             <Text>This is Cart</Text>
@@ -15,7 +15,7 @@ const Cart=(props)=>{
         </View>
     );
 }
-export default Cart;
+export default CartScreen;
 const styles = StyleSheet.create({
     endBtn: {
         marginRight: 80,
