@@ -6,7 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
- 
+import Icon from 'react-native-vector-icons/FontAwesome'  
+
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import PostScreen from './src/screens/PostScreen'; 
 import LoginScreen from './src/screens/loginScreen';
@@ -68,7 +69,47 @@ const DetailStackScreen =()=>(
 )
 const TabContainer=()=>{
   return(
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            if (route.name === 'Home') {
+              return (
+                <Icon
+                  name={
+                    focused
+                      ? 'home'
+                      : 'home'
+                  }
+                  size={size}
+                  color={color}
+                />
+              );
+            } else if (route.name === 'Cart') {
+              return (
+                <Icon
+                  name={focused ? 'shopping-cart' : 'shopping-cart'}
+                  size={size}
+                  color={color}
+                />
+              );
+            }
+            else if (route.name === 'Profile') {
+              return (
+                <Icon
+                  name={focused ? 'user-circle' : 'user-circle'}
+                  size={size}
+                  color={color}
+                />
+              );
+            }
+          },
+        })}
+
+        tabBarOptions={{
+          activeTintColor: 'black',
+          inactiveTintColor: 'gray',
+        }}
+      >
         <Tab.Screen 
           name="Home" 
           component={PostScreen} 
@@ -83,11 +124,11 @@ const TabContainer=()=>{
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="SplashScreen">
+      <Drawer.Navigator initialRouteName="SplashScreen" >
         <Drawer.Screen name="Home" component={HomeStackScreen} />
         <Drawer.Screen name="Profile" component={ProfileScreen} />
         <Drawer.Screen name="Setting" component={DetailStackScreen} />
-        <Drawer.Screen name="SplashScreen" component={SplashScreen} />
+        <Drawer.Screen name="SplashScreen" component={SplashScreen}  />
 
       </Drawer.Navigator>
      
