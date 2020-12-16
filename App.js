@@ -28,7 +28,7 @@ const HomeStackScreen =()=>(
     screenOptions={{
       headerShown:false
     }}
-    initialRouteName="TabContainer" headerMode='none'
+    initialRouteName="SplashScreen" headerMode='none'
   >
     <HomeStack.Screen name="SplashScreen" component={SplashScreen} />
     {/* <HomeStack.Screen name="Onboarding" component={OnboardingScreen} /> */}
