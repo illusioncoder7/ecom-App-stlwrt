@@ -106,7 +106,7 @@ const TabContainer=()=>{
         })}
 
         tabBarOptions={{
-          activeTintColor: 'black',
+          activeTintColor: 'blue',
           inactiveTintColor: 'gray',
         }}
       >
@@ -124,8 +124,10 @@ const TabContainer=()=>{
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="SplashScreen" >
-        <Drawer.Screen name="Home" component={HomeStackScreen} />
+      <Drawer.Navigator initialRouteName="SplashScreen" 
+        
+      >
+        <Drawer.Screen name="Home" component={HomeStackScreen}/>
         <Drawer.Screen name="Profile" component={ProfileScreen} />
         <Drawer.Screen name="Setting" component={DetailStackScreen} />
         <Drawer.Screen name="SplashScreen" component={SplashScreen}  />
